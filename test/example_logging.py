@@ -11,22 +11,24 @@ setup_file_logging(
     log_file="logs/app.log",
     rotation="10 MB",  # New file when reaches 10MB
     retention="30 days",  # Delete logs older than 30 days
-    level="DEBUG"  # File will capture DEBUG and above
+    level="DEBUG",  # File will capture DEBUG and above
 )
 
 # Now logs go to both console and file
 logger.debug("This goes to file only (console is INFO level)")
 logger.info("This goes to both console and file")
 
+
 # Loguru's powerful features
 @logger.catch  # Decorator to catch exceptions
 def risky_function():
     return 1 / 0
 
+
 # Better exception handling
 try:
     risky_function()
-except:
+except Exception:  # Fixed: using specific exception instead of bare except
     logger.exception("Something went wrong!")
 
 # Structured logging
