@@ -2,6 +2,7 @@ __pycache__/
 *.pyc
 .env
 logs
+.ruff_cache/
 
 # uv
 .venv/
