@@ -1,4 +1,4 @@
-# Gamecraft
+# README
 
 ## Setup
 
